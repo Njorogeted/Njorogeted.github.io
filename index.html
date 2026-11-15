@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Portfolio | Computer Science Student</title>
+<meta name="description" content="Project portfolio of Maina Ted Njoroge, computer science student building full-stack apps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃🏾‍♂️</text>💪🏾</svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#050b1f; --navy-800:#0a1535; --navy-700:#101f4d; --line:#1c3068;
+  --neon:#39ff14; --txt:#f4f7ff; --dim:#8fa3d6;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy-900);color:var(--txt);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--neon);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.95;margin:0}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav .logo{font-family:"Barlow Condensed",sans-serif;font-style:italic;font-weight:900;font-size:24px;color:var(--neon);text-decoration:none;text-transform:uppercase}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--dim);font-weight:600;font-size:15px}
+nav ul a:hover{color:var(--txt)}
+
+/* hero */
+.hero{padding:64px 0 72px}
+.hero h1{font-size:clamp(64px,15vw,150px)}
+.hero h1 span{color:var(--neon)}
+.hero p{max-width:560px;font-size:20px;color:var(--txt);margin:22px 0 0}
+.hero .meta{color:var(--dim);font-size:16px;margin-top:10px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:800;text-decoration:none;border:2px solid var(--neon)}
+.btn.primary{background:var(--neon);color:var(--navy-900);box-shadow:0 0 22px rgba(57,255,20,.3)}
+.btn.primary:hover{background:#2bd40f;border-color:#2bd40f}
+.btn.ghost{color:var(--neon)}
+.btn.ghost:hover{background:rgba(57,255,20,.1)}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(36px,6vw,56px);margin-bottom:28px}
+
+/* projects */
+.project{display:grid;grid-template-columns:1.1fr 1fr;background:var(--navy-800);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:22px}
+.project.feature{border-color:var(--neon)}
+.shot{position:relative;min-height:280px;background:repeating-linear-gradient(135deg,var(--navy-800),var(--navy-800) 12px,var(--navy-700) 12px,var(--navy-700) 24px)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot .ph{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--dim);font-size:14px;padding:16px}
+.info{padding:28px;display:grid;gap:12px;align-content:center}
+.info h3{font-size:clamp(34px,5vw,48px)}
+.info p{margin:0;color:#c9d5f5}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:4px 0 0;list-style:none}
+.tags li{border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.links a{font-weight:800;color:var(--neon);text-decoration:none;border-bottom:2px solid var(--neon)}
+.links a:hover{color:var(--txt);border-color:var(--txt)}
+.soon{opacity:.75;border-style:dashed}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.skill{background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:20px}
+.skill h3{font-size:26px;margin-bottom:10px;color:var(--neon)}
+.skill p{margin:0;color:#c9d5f5;font-size:16px}
+
+/* about + contact */
+.about{max-width:640px;color:#c9d5f5}
+.contact a.big{display:inline-block;font-family:"Barlow Condensed",sans-serif;font-style:italic;font-weight:900;font-size:clamp(30px,6vw,56px);text-transform:none;color:var(--neon);text-decoration:none;word-break:break-all}
+.contact a.big:hover{color:var(--txt)}
+.contact .row{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px}
+.contact .row a{color:var(--dim);font-weight:600}
+.contact .row a:hover{color:var(--txt)}
+footer{padding:28px 0 40px;color:var(--dim);font-size:14px;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  nav ul{gap:14px}
+  .project{grid-template-columns:1fr}
+  .shot{min-height:200px}
+  .hero{padding:40px 0 52px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="#top">MAINA TED NJOROGE</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>PROJECT<br><span>PORTFOLIO</span></h1>
+    <p>Computer science student building full-stack apps.</p>
+    <p class="meta"> STEFAN CEL MARE UNIVERSITY OS SUCEAVA · 3RD YEAR · Looking for an internship</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn ghost" href="CV.pdf">Download CV</a>
+    </div>
+  </header>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <article class="project feature">
+      <div class="shot">
+        <img src="images/runtogether.jpg" alt="RunTogether app showing a live run on the map" onerror="this.remove()">
+      </div>
+      <div class="info">
+        <h3>RunTogether</h3>
+        <p>A running app that tracks runs from GPS, calculates distance and pace automatically, and shows other active runners on a live map. Sharing is opt-in and locations are rounded to protect privacy.</p>
+        <ul class="tags">
+          <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Leaflet</li><li>JWT</li>
+        </ul>
+        <div class="links">
+          <a href="https://kiprun.vercel.app">Live demo</a>
+          <a href="https://github.com/Njorogeted/kiprun">Source code</a>
+        </div>
+      </div>
+    </article>
+
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><p>TypeScript, c, SQL, HTML, javascript</p></div>
+      <div class="skill"><h3>Frontend</h3><p>React, Vite, Leaflet maps</p></div>
+      <div class="skill"><h3>Backend</h3><p>Node.js, Express, REST API design</p></div>
+      <div class="skill"><h3>Data</h3><p>PostgreSQL, schema design, indexes, queries</p></div>
+      <div class="skill"><h3>Tools</h3><p>Git, GitHub, Postman, VS Code</p></div>
+      <div class="skill"><h3>Browser APIs</h3><p>Geolocation</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="about">I am a computer science student who enjoys running and building. My projects start from problems I run into myself, and I like owning them from database design to deployment. Along the way I have debugged GPS noise, CORS errors and build tooling, and I write up what I learn in each project's README.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <a class="big" href="mailto:ted.maina@student.usv.ro">ted.maina@student.usv.ro</a>
+    <div class="row">
+      <a href="https://github.com/Njorogeted">GitHub</a>
+      <a href="https://www.linkedin.com/in/ted-maina-423a9b270">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>© <span id="y"></span> Maina Ted Njoroge. Built with plain HTML and CSS, hosted on GitHub Pages.</footer>
+</div>
+<script>y.textContent=new Date().getFullYear()</script>
+</body>
+</html>
